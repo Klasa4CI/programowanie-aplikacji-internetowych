@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        * {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 72px;
+            margin-bottom: -5px;
+        }
+
+        .btn {
+            width: 350px;
+            height: 50px;
+            text-align: center;
+            box-shadow: #C5C5C5 0px 3px 8px;
+        }
+
+        .btn:hover {
+            font-weight: bold;
+            box-shadow: #D6D6D6 0px 3px 8px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #2C423F;
+        }
+
+        .rodol {
+            padding-bottom: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 700px;
+            height: 800px;
+            padding: 30px;
+            background-color: #4C5B61;
+            box-shadow: #C5C5C5 0px 3px 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>wormólasz</h1>
+        <form name="formularz">
+            <p><label for="imie">Imię: </label><input type="text" name="imie" /></p>
+            <p><label for="nazwisko">Nazwisko: </label><input type="text" name="nazwisko" /></p>
+            <p><label for="numerButa">Numer buta: </label><input type="number" name="numerButa" /></p>
+            <p><label for="wiek">Wiek: </label><input type="number" name="wiek" /></p>
+        </form>
+        <p class="rodol"><b>Po kliknięciu przycisku wyrażasz zgodę na rzeczy opisane poniżej:</b><br /> Wyrażam zgodę na
+            przetwarzanie
+            moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z
+            Rozporządzeniem
+            Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób
+            fizycznych
+            w
+            związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz
+            uchylenia
+            dyrektywy 95/46/WE (RODO).</p>
+        <input type="button" class="btn" value="Prześlij dane" />
+        <p class="wynik">
+            <b>Twoje imię to:</b> X<br />
+            <b>Twoje nazwisko to:</b> X<br />
+            <b>Twój numer buta to:</b> X<br />
+            <b>Masz</b> X <b>lat!</b><br />
+        </p>
+    </main>
+    <script>
+        const btn = document.querySelector('.btn');
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const imie = document.forms["formularz"].imie.value;
+            const nazwisko = document.forms["formularz"].elements["nazwisko"].value;
+            const numerButa = parseInt(document.forms.formularz.numerButa.value);
+            const wiek = parseInt(document.forms["formularz"].wiek.value);
+            console.log(imie, nazwisko, numerButa, wiek);
+            document.querySelector('.wynik').innerHTML = `
+            <b>Twoje imię to:</b> ${imie}<br />
+            <b>Twoje nazwisko to:</b> ${nazwisko}<br />
+            <b>Twój numer buta to:</b> ${numerButa}<br />
+            <b>Masz</b> ${wiek} <b>lat!</b><br />
+            `
+        });
+    </script>
+</body>
+
+</html>
