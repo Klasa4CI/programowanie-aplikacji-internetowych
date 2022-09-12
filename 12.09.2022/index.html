@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            cursor: pointer;
+        }
+        .key {
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            float: left;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            font-weight: bold;
+            font-size: 48px;
+        }
+        .key:hover {
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+            animation-name: example;
+            animation-duration: .1s;       
+        }
+        .key4 { clear: both; }
+        .key7 { clear: both; }
+        .inputsPlaceholder {
+            cursor: pointer;
+            clear: both;
+            display: flex;
+            flex-direction: column;
+            width: 306px;
+        }
+        input {
+            width: 300px;
+            height: 50px;
+            cursor: pointer;
+        }
+        @keyframes example {
+            to {font-size: 26px;}
+            from {font-size: 48px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="klawiatura">
+        <div class="key key1">1</div>
+        <div class="key key2">2</div>
+        <div class="key key3">3</div>
+        <div class="key key4">4</div>
+        <div class="key key5">5</div>
+        <div class="key key6">6</div>
+        <div class="key key7">7</div>
+        <div class="key key8">8</div>
+        <div class="key key9">9</div>
+    </div>
+    <div class="inputsPlaceholder">
+        <input type="button" name="" value="2" style="width:306px;" />
+        <input type="text" name="" id="" style="float:left;"/>
+        <input type="button" name="" value="4" style="clear:both; width:306px;"/>
+        <input type="text" name="" id="" style="float:left;" />
+        <input type="button" name="" value="10" style="clear:both; width:306px;" />
+        <input type="text" name="" id="" style="float:left;" />
+        <div style="clear:both;"></div>
+    </div>
+</body>
+</html>
